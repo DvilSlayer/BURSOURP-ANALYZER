@@ -4,685 +4,683 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import pandas as pd
 import openpyxl
-# dp = pd.read_excel('BUSROP_Students_questionnaire_all_versions_labels_2024_04_08_19.xlsx')
-# # print(dp["Gender"])
-# o=0
-# for i in dp['Do you agree to participate in this study?']:
-#     if i=="Yes":
-#         o+=1
-# p=0
-# for i in dp['Do you agree to participate in this study?']:
-#     if i=="No":
-#         p+=1
-#         # dp = dp.drop(i, axis=1)
-# # dp.to_excel('data.xlsx', index=False)
-# # print(dp.columns)
-# for index, row in dp.iterrows():
-#     # Check if the specific item is found in the desired column
-#     if row['Do you agree to participate in this study?'] == "No":
-#         # Drop the corresponding row
-#         dp.drop(index, inplace=True)
-#
-# print(f"{o} students chose to participate in this study")
-#
-# # print(dp['Do you agree to participate in this study?'])
-# dp.to_csv("ACTUAL PARTICIPANTS.csv", index=False)
-# # for index, row in dp.iterrows():
-# #     # Check if the specific item is found in the desired column
-# #     if row['Gender'] == "Male":
-# #         # Drop the corresponding row
-# #         dp.drop(index, inplace=True)
-# # dp.to_csv("Female data.csv", index=False)
-# df = pd.read_csv("ACTUAL PARTICIPANTS.csv")
-# n=0
-# for i in df['Gender']:
-#     if i=="Male":
-#         n+=1
-# m=0
-# for i in df['Gender']:
-#     if i=="Female":
-#         m+=1
-# print(f"{m} Females")
-# print(f"{n} Males")
-# l=0
-# for t in df["Do you think consuming caffeine will lead to increase in heart rate?"]:
-#     if t == "Yes":
-#         l+=1
-# print(f"{l} students believe it will increase heart rates")
-# q=0
-# for t in df["Do you think consuming caffeine will lead to increase in Blood pressure?"]:
-#     if t == "Yes":
-#         q+=1
-# print(f"{q} students believe it will lead to increase in Blood pressure")
-# q=0
-# for t in df["Do you think consuming caffeine causes bone weakness?"]:
-#     if t == "Yes":
-#         q+=1
-# print(f"{q} students believe it will cause bone weakness?")
-# q=0
-# for t in df["Do you think caffeine is a cause for cancer?"]:
-#     if t == "Yes":
-#         q+=1
-# print(f"{q} students believe it is a cause for cancer")
-# q=0
-# for t in df["Do you think consuming caffeine will lead to Diabetes?"]:
-#     if t == "Yes":
-#         q+=1
-# print(f"{q} students believe it will lead to Diabetes")
-# q=0
-# for t in df["Do you think consuming caffeine increases urination?"]:
-#     if t == "Yes":
-#         q+=1
-# print(f"{q} students believe it will lead to an increases urination")
-# q=0
-# for t in df["Which of the following do you think is the acceptable amount of daily consumption of caffeine?"]:
-#     if t == "500mg/day":
-#         q+=1
-# print(f"{q} students believe 500mg/day is the acceptable amount of daily consumption of caffeine")
-# q=0
-# for t in df["Which of the following do you think is the acceptable amount of daily consumption of caffeine?"]:
-#     if t == "400mg/day":
-#         q+=1
-# print(f"{q} students believe 400mg/day is the acceptable amount of daily consumption of caffeine")
-# q=0
-# for t in df["Which of the following do you think is the acceptable amount of daily consumption of caffeine?"]:
-#     if t == "600 mg/day":
-#         q+=1
-# print(f"{q} students believe 600mg/day is the acceptable amount of daily consumption of caffeine")
-# q=0
-# for t in df["Which of the following do you think is the acceptable amount of daily consumption of caffeine?"]:
-#     if t == "700mg/day":
-#         q+=1
-# print(f"{q} students believe 700mg/day is the acceptable amount of daily consumption of caffeine")
-# q=0
-# for t in df["Do you consume caffeinated drinks during the examination period?"]:
-#     if t == "Yes":
-#         q+=1
-# print(f"{q} students consume caffeinated drinks during the examination period")
-# q=0
-# for t in df["What types of caffeine-containing drinks do you consume? (You can pick multiple choices)"]:
-#     if "Soda" in str(t):
-#         q+=1
-# print(f"{q} students consume Soda")
-# q=0
-# for t in df["What types of caffeine-containing drinks do you consume? (You can pick multiple choices)"]:
-#     if "Caffeinated tea" in str(t):
-#         q+=1
-# print(f"{q} students consume caffeinated tea")
-# q=0
-# for t in df["What types of caffeine-containing drinks do you consume? (You can pick multiple choices)"]:
-#     if "Energy drinks" in str(t):
-#         q+=1
-# print(f"{q} students consume Energy drinks")
-# q=0
-# for t in df["What types of caffeine-containing drinks do you consume? (You can pick multiple choices)"]:
-#     if "Coffee" in str(t):
-#         q+=1
-# print(f"{q} students consume Coffee")
-# q=0
-# for t in df["What is your preferred package?"]:
-#     if t == "Bottles":
-#         q+=1
-# print(f"{q} students use bottles")
-# q=0
-# for t in df["What is your preferred package?"]:
-#     if t == "Sachet":
-#         q+=1
-# print(f"{q} students use sachets")
-# q=0
-# for t in df["What is your preferred package?"]:
-#     if t == "No preferences":
-#         q+=1
-# print(f"{q} students have no preferences")
-# q=0
-# for t in df["What is your preferred package?"]:
-#     if t == "Cans":
-#         q+=1
-# print(f"{q} students use cans")
-# q=0
-# for t in df["How regular do you take caffeinated drinks?"]:
-#     if t == "Thrice or more weekly":
-#         q+=1
-# print(f"{q} students take caffeinated drinks Thrice or more weekly")
-# q=0
-# for t in df["How regular do you take caffeinated drinks?"]:
-#     if t == "Weekly":
-#         q+=1
-# print(f"{q} students take caffeinated drinks weekly")
-# q=0
-# for t in df["How regular do you take caffeinated drinks?"]:
-#     if t == "Daily":
-#         q+=1
-# print(f"{q} students take caffeinated drinks Daily")
-# print('Only 1 student mixes caffeinated drinks with alcohol')
-# print('Only 1 student mixes caffeinated drinks with drugs')
-# print("13 students feel nervousness from caffeinated drinks")
-# print("4 students have Irritable behavior from caffeinated drinks")
-# print("10 students feel mood swings from caffeinated drinks")
-# print("3 students Hallucinate from caffeinated drinks")
-# print("7 students feel aggression from caffeinated drinks")
-# print("11 students feel Palpitation (Heart beating fast) from caffeinated drinks")
-# print("24 students feel Insomnia (Poor Sleep) from caffeinated drinks")
-# print("21 students feel Dizziness from caffeinated drinks")
-# print("3 students feel Vomiting from caffeinated drinks")
-# print("30 students feel craving for more from caffeinated drinks")
-# print("18 students feel Meal skipping from caffeinated drinks")
-# q=0
-# for t in df["Concentrate on what to do next"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Concentrate on what to do next")
-# q=0
-# for t in df["Concentrate on what to do next"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Concentrate on what to do next")
-# q=0
-# for t in df["Concentrate on what to do next"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Concentrate on what to do next")
-# q=0
-# for t in df["Concentrate on what to do next"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Concentrate on what to do next")
-# q=0
-# for t in df["Talk to friends"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Talk to friends")
-# q=0
-# for t in df["Talk to friends"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Talk to friends")
-# q=0
-# for t in df["Talk to friends"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Talk to friends")
-# q=0
-# for t in df["Talk to friends"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Talk to friends")
-# q=0
-# for t in df["Talk to parents or relatives"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Talk to parents or relatives")
-# q=0
-# for t in df["Talk to parents or relatives"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Talk to parents or relatives")
-# q=0
-# for t in df["Talk to parents or relatives"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Talk to parents or relatives")
-# q=0
-# for t in df["Talk to parents or relatives"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Talk to parents or relatives")
-# q=0
-# for t in df["Sleeping"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Sleeping")
-# q=0
-# for t in df["Sleeping"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Sleeping")
-# q=0
-# for t in df["Sleeping"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Sleeping")
-# q=0
-# for t in df["Sleeping"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Sleeping")
-# q=0
-# for t in df["Crying"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Crying")
-# q=0
-# for t in df["Crying"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Crying")
-# q=0
-# for t in df["Crying"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Crying")
-# q=0
-# for t in df["Crying"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Crying")
-# q=0
-# for t in df["Spiritual – praying, meditation/yoga"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Spiritual – praying, meditation/yoga")
-# q=0
-# for t in df["Spiritual – praying, meditation/yoga"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Spiritual – praying, meditation/yoga")
-# q=0
-# for t in df["Spiritual – praying, meditation/yoga"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Spiritual – praying, meditation/yoga")
-# q=0
-# for t in df["Spiritual – praying, meditation/yoga"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Spiritual – praying, meditation/yoga")
-# q=0
-# for t in df["Watch television, movies"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Watch television, movies")
-# q=0
-# for t in df["Watch television, movies"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Watch television, movies")
-# q=0
-# for t in df["Watch television, movies"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Watch television, movies")
-# q=0
-# for t in df["Watch television, movies"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Watch television, movies")
-# q=0
-# for t in df["Play games/sports"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Play games/sports")
-# q=0
-# for t in df["Play games/sports"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Play games/sports")
-# q=0
-# for t in df["Play games/sports"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Play games/sports")
-# q=0
-# for t in df["Play games/sports"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Play games/sports")
-# q=0
-# for t in df["Smoking tobacco/ taking alcohol"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Smoking tobacco/ taking alcohol")
-# q=0
-# for t in df["Smoking tobacco/ taking alcohol"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Smoking tobacco/ taking alcohol")
-# q=0
-# for t in df["Smoking tobacco/ taking alcohol"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Smoking tobacco/ taking alcohol")
-# q=0
-# for t in df["Smoking tobacco/ taking alcohol"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Smoking tobacco/ taking alcohol")
-# q=0
-# for t in df["Keeping feeling to self"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Keeping feeling to self")
-# q=0
-# for t in df["Keeping feeling to self"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Keeping feeling to self")
-# q=0
-# for t in df["Keeping feeling to self"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Keeping feeling to self")
-# q=0
-# for t in df["Keeping feeling to self"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Keeping feeling to self")
-# q=0
-# for t in df["Tried to look on the bright side of life"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Tried to look on the bright side of life")
-# q=0
-# for t in df["Tried to look on the bright side of life"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Tried to look on the bright side of life")
-# q=0
-# for t in df["Tried to look on the bright side of life"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Tried to look on the bright side of life")
-# q=0
-# for t in df["Tried to look on the bright side of life"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Tried to look on the bright side of life")
-# q=0
-# for t in df["Spend more time alone"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Spend more time alone")
-# q=0
-# for t in df["Spend more time alone"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Spend more time alone")
-# q=0
-# for t in df["Spend more time alone"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Spend more time alone")
-# q=0
-# for t in df["Spend more time alone"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Spend more time alone")
-# q=0
-# for t in df["Refuse to think about it too much"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Refuse to think about it too much")
-# q=0
-# for t in df["Refuse to think about it too much"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Refuse to think about it too much")
-# q=0
-# for t in df["Refuse to think about it too much"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Refuse to think about it too much")
-# q=0
-# for t in df["Refuse to think about it too much"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Refuse to think about it too much")
-# q=0
-# for t in df["Double the efforts and work harder"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Double the efforts and work harder")
-# q=0
-# for t in df["Double the efforts and work harder"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Double the efforts and work harder")
-# q=0
-# for t in df["Double the efforts and work harder"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Double the efforts and work harder")
-# q=0
-# for t in df["Double the efforts and work harder"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Double the efforts and work harder")
-#
-# q=0
-# for t in df["Convince self things aren’t as bad as it seem"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Convince self things aren’t as bad as it seem")
-# q=0
-# for t in df["Convince self things aren’t as bad as it seem"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Convince self things aren’t as bad as it seem")
-# q=0
-# for t in df["Convince self things aren’t as bad as it seem"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Convince self things aren’t as bad as it seem")
-# q=0
-# for t in df["Convince self things aren’t as bad as it seem"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Convince self things aren’t as bad as it seem")
-# q=0
-# for t in df["Avoid being with people"]:
-#     if t == "A lot":
-#         q+=1
-# print(f"{q} students  chose 'a lot' on Avoid being with people")
-# q=0
-# for t in df["Avoid being with people"]:
-#     if t == "A medium amount":
-#         q+=1
-# print(f"{q} students  chose 'A medium amount' on Avoid being with people")
-# q=0
-# for t in df["Avoid being with people"]:
-#     if t == "Not at all":
-#         q+=1
-# print(f"{q} students  chose 'Not at all' on Avoid being with people")
-# q=0
-# for t in df["Avoid being with people"]:
-#     if t == "A little bit":
-#         q+=1
-# print(f"{q} students  chose 'A little bit' on Avoid being with people")
-# q=0
-# for t in df["If you don’t take caffeinated drinks, what do you take?"]:
-#     if "Water" in str(t):
-#         q+=1
-# print(f"{q} students students take water instead of caffeinated drinks")
-# q=0
-# for t in df["If you don’t take caffeinated drinks, what do you take?"]:
-#     if "Energy" in str(t):
-#         q+=1
-#     elif "energy" in str(t):
-#         q+=1
-#     elif "juice" in str(t):
-#         q+=1
-#     elif "Juice" in str(t):
-#         q+=1
-#     elif "Cway" in str(t):
-#         q+=1
-# print(f"{q} students take energy drinks/juice instead of caffeinated drinks")
-# q=0
-# for t in df["If you don’t take caffeinated drinks, what do you take?"]:
-#     if "Tea" in str(t):
-#         q+=1
-#     elif "tea" in str(t):
-#         q+=1
-#     elif 'Milk' in str(t):
-#         q+=1
-#     elif 'yoghurt' in str(t):
-#         q+=1
-#     elif 'fresh' in str(t):
-#         q+=1
-#     elif 'Fresh' in str(t):
-#         q+=1
-# print(f"{q} students take tea/milk/yoghurt instead of caffeinated drinks")
-# q=0
-# for t in df["If you don’t take caffeinated drinks, what do you take?"]:
-#     if "Coke" in str(t):
-#         q+=1
-#     elif 'Carbonate' in str(t):
-#         q+=1
-#     elif 'carbonate' in str(t):
-#         q+=1
-# print(f"{q} students take carbonated drinks instead of caffeinated drinks")
-# q=0
-# for t in df["If you don’t take caffeinated drinks, what do you take?"]:
-#     if "Food" in str(t):
-#         q+=1
-#     elif "food" in str(t):
-#         q+=1
-#     elif 'Snack' in str(t):
-#         q+=1
-#     elif 'snack' in str(t):
-#         q+=1
-#     elif 'Fruits' in str(t):
-#         q+=1
-#     elif 'fruits' in str(t):
-#         q+=1
-#     elif 'Suya' in str(t):
-#         q+=1
-# print(f"{q} students eat solid food instead of caffeinated drinks")
-# q=0
-# for t in df["If you don’t take caffeinated drinks, what do you take?"]:
-#     if "gum" in str(t):
-#         q += 1
-# print(f"{q} students chew gum instead of caffeinated drinks")
-# q=0
-# for t in df["During the past month, what time have you usually gone to bed at night?"]:
-#     if "9" in str(t):
-#         q+=1
-#     elif "8" in str(t):
-#         q+=1
-# print(f"{q} students go to bed before 10")
-# q=0
-# for t in df["During the past month, what time have you usually gone to bed at night?"]:
-#     if "10" in str(t):
-#         q+=1
-# print(f"{q} students go to bed after 10")
-# q=0
-# for t in df["During the past month, what time have you usually gone to bed at night?"]:
-#     if "11" in str(t):
-#         q+=1
-# print(f"{q} students go to bed after 11")
-# q=0
-# for t in df["During the past month, what time have you usually gone to bed at night?"]:
-#     if "12" in str(t):
-#         q+=1
-# print(f"{q} students go to bed after 12")
-# dg= pd.read_csv('output.csv')
-# for i in dg.columns:
-#     q = 0
-#     for t in dg[i]:
-#         if t == 'Not during the past month':
-#             q+=1
-#     if 'Unnamed' in str(i):
-#         pass
-#     else:
-#         print(f"{q} students {i} Not during the past month")
-# for i in dg.columns:
-#     q = 0
-#     for t in dg[i]:
-#         if t == 'Less than once a week':
-#             q+=1
-#     if 'Unnamed' in str(i):
-#         pass
-#     else:
-#         print(f"{q} students {i} Less than once a week")
-# for i in dg.columns:
-#     q = 0
-#     for t in dg[i]:
-#         if t == 'Three or more times a week':
-#             q+=1
-#     if 'Unnamed' in str(i):
-#         pass
-#     else:
-#         print(f"{q} students {i} Three or more times a week")
-# for i in dg.columns:
-#     q = 0
-#     for t in dg[i]:
-#         if t == 'Once or twice a week':
-#             q+=1
-#     if 'Unnamed' in str(i):
-#         pass
-#     else:
-#         print(f"{q} students {i} Once or twice a week")
-# q=0
-# for t in dg['How often during the past month have you had trouble sleeping because of other reasons?']:
-#     if t == 'Three or more times a week':
-#             q+=1
-#     elif 'Unnamed' in str(t):
-#         pass
-# print(f"{q} students How often during the past month have you had trouble sleeping because of other reasons?Three or more times a week")
-# q=0
-# for t in dg['How often during the past month have you had trouble sleeping because of other reasons?']:
-#     if t == 'Not during the past month':
-#             q+=1
-#     elif 'Unnamed' in str(t):
-#         pass
-# print(f"{q} students How often during the past month have you had trouble sleeping because of other reasons?Not during the past month")
-# q=0
-# for t in dg['How often during the past month have you had trouble sleeping because of other reasons?']:
-#     if t == 'Less than once a week':
-#             q+=1
-#     elif 'Unnamed' in str(t):
-#         pass
-# print(f"{q} students How often during the past month have you had trouble sleeping because of other reasons?Less than once a week")
-# q=0
-# for t in dg['During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?']:
-#     if t == 'Three or more times a week':
-#             q+=1
-#     elif 'Unnamed' in str(t):
-#         pass
-# print(f"{q} students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Three or more times a week")
-# q=0
-# for t in dg['During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?']:
-#     if t == 'Not during the past month':
-#             q+=1
-#     elif 'Unnamed' in str(t):
-#         pass
-# print(f"{q} students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Not during the past month")
-# q=0
-# for t in dg['During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?']:
-#     if t == 'Less than once a week':
-#             q+=1
-#     elif 'Unnamed' in str(t):
-#         pass
-# print(f"{q} students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Less than once a week")
-# q=0
-# for t in df["During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?"]:
-#     if t == "No problem at all":
-#         q+=1
-# print(f"{q} students  chose 'No problem at all' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?")
-# q=0
-# for t in df["During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?"]:
-#     if t == "Only a very slight problem":
-#         q+=1
-# print(f"{q} students  chose 'Only a very slight problem' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?")
-# q=0
-# for t in df["During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?"]:
-#     if t == "Somewhat of a problem":
-#         q+=1
-# print(f"{q} students  chose 'Somewhat of a problem' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?")
-# q=0
-# for t in df["During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?"]:
-#     if t == "A very big problem":
-#         q+=1
-# print(f"{q} students  chose 'A very big problem' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?")
-#
-# # for index, row in df.iterrows():
-# #     # Check if the specific item is found in the desired column
-# #     if row['Gender'] == "Female":
-# #         # Drop the corresponding row
-# #         df.drop(index, inplace=True)
-# # df.to_csv("Male data.csv", index=False)
-# # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-# import re
-#
+dp = pd.read_excel('BUSROP_Students_questionnaire_all_versions_labels_2024_04_08_19.xlsx')
+# print(dp["Gender"])
+o=0
+for i in dp['Do you agree to participate in this study?']:
+    if i=="Yes":
+        o+=1
+p=0
+for i in dp['Do you agree to participate in this study?']:
+    if i=="No":
+        p+=1
+        # dp = dp.drop(i, axis=1)
+# dp.to_excel('data.xlsx', index=False)
+# print(dp.columns)
+for index, row in dp.iterrows():
+    # Check if the specific item is found in the desired column
+    if row['Do you agree to participate in this study?'] == "No":
+        # Drop the corresponding row
+        dp.drop(index, inplace=True)
+
+print(f"{o} students chose to participate in this study")
+
+print(dp['Do you agree to participate in this study?'])
+dp.to_csv("ACTUAL PARTICIPANTS.csv", index=False)
+for index, row in dp.iterrows():
+    # Check if the specific item is found in the desired column
+    if row['Gender'] == "Male":
+        # Drop the corresponding row
+        dp.drop(index, inplace=True)
+dp.to_csv("Female data.csv", index=False)
+df = pd.read_csv("ACTUAL PARTICIPANTS.csv")
+n=0
+for i in df['Gender']:
+    if i=="Male":
+        n+=1
+m=0
+for i in df['Gender']:
+    if i=="Female":
+        m+=1
+print(f"{m} Females")
+print(f"{n} Males")
+l=0
+for t in df["Do you think consuming caffeine will lead to increase in heart rate?"]:
+    if t == "Yes":
+        l+=1
+print(f"{l} students believe it will increase heart rates")
+q=0
+for t in df["Do you think consuming caffeine will lead to increase in Blood pressure?"]:
+    if t == "Yes":
+        q+=1
+print(f"{q} students believe it will lead to increase in Blood pressure")
+q=0
+for t in df["Do you think consuming caffeine causes bone weakness?"]:
+    if t == "Yes":
+        q+=1
+print(f"{q} students believe it will cause bone weakness?")
+q=0
+for t in df["Do you think caffeine is a cause for cancer?"]:
+    if t == "Yes":
+        q+=1
+print(f"{q} students believe it is a cause for cancer")
+q=0
+for t in df["Do you think consuming caffeine will lead to Diabetes?"]:
+    if t == "Yes":
+        q+=1
+print(f"{q} students believe it will lead to Diabetes")
+q=0
+for t in df["Do you think consuming caffeine increases urination?"]:
+    if t == "Yes":
+        q+=1
+print(f"{q} students believe it will lead to an increases urination")
+q=0
+for t in df["Which of the following do you think is the acceptable amount of daily consumption of caffeine?"]:
+    if t == "500mg/day":
+        q+=1
+print(f"{q} students believe 500mg/day is the acceptable amount of daily consumption of caffeine")
+q=0
+for t in df["Which of the following do you think is the acceptable amount of daily consumption of caffeine?"]:
+    if t == "400mg/day":
+        q+=1
+print(f"{q} students believe 400mg/day is the acceptable amount of daily consumption of caffeine")
+q=0
+for t in df["Which of the following do you think is the acceptable amount of daily consumption of caffeine?"]:
+    if t == "600 mg/day":
+        q+=1
+print(f"{q} students believe 600mg/day is the acceptable amount of daily consumption of caffeine")
+q=0
+for t in df["Which of the following do you think is the acceptable amount of daily consumption of caffeine?"]:
+    if t == "700mg/day":
+        q+=1
+print(f"{q} students believe 700mg/day is the acceptable amount of daily consumption of caffeine")
+q=0
+for t in df["Do you consume caffeinated drinks during the examination period?"]:
+    if t == "Yes":
+        q+=1
+print(f"{q} students consume caffeinated drinks during the examination period")
+q=0
+for t in df["What types of caffeine-containing drinks do you consume? (You can pick multiple choices)"]:
+    if "Soda" in str(t):
+        q+=1
+print(f"{q} students consume Soda")
+q=0
+for t in df["What types of caffeine-containing drinks do you consume? (You can pick multiple choices)"]:
+    if "Caffeinated tea" in str(t):
+        q+=1
+print(f"{q} students consume caffeinated tea")
+q=0
+for t in df["What types of caffeine-containing drinks do you consume? (You can pick multiple choices)"]:
+    if "Energy drinks" in str(t):
+        q+=1
+print(f"{q} students consume Energy drinks")
+q=0
+for t in df["What types of caffeine-containing drinks do you consume? (You can pick multiple choices)"]:
+    if "Coffee" in str(t):
+        q+=1
+print(f"{q} students consume Coffee")
+q=0
+for t in df["What is your preferred package?"]:
+    if t == "Bottles":
+        q+=1
+print(f"{q} students use bottles")
+q=0
+for t in df["What is your preferred package?"]:
+    if t == "Sachet":
+        q+=1
+print(f"{q} students use sachets")
+q=0
+for t in df["What is your preferred package?"]:
+    if t == "No preferences":
+        q+=1
+print(f"{q} students have no preferences")
+q=0
+for t in df["What is your preferred package?"]:
+    if t == "Cans":
+        q+=1
+print(f"{q} students use cans")
+q=0
+for t in df["How regular do you take caffeinated drinks?"]:
+    if t == "Thrice or more weekly":
+        q+=1
+print(f"{q} students take caffeinated drinks Thrice or more weekly")
+q=0
+for t in df["How regular do you take caffeinated drinks?"]:
+    if t == "Weekly":
+        q+=1
+print(f"{q} students take caffeinated drinks weekly")
+q=0
+for t in df["How regular do you take caffeinated drinks?"]:
+    if t == "Daily":
+        q+=1
+print(f"{q} students take caffeinated drinks Daily")
+print('Only 1 student mixes caffeinated drinks with alcohol')
+print('Only 1 student mixes caffeinated drinks with drugs')
+print("13 students feel nervousness from caffeinated drinks")
+print("4 students have Irritable behavior from caffeinated drinks")
+print("10 students feel mood swings from caffeinated drinks")
+print("3 students Hallucinate from caffeinated drinks")
+print("7 students feel aggression from caffeinated drinks")
+print("11 students feel Palpitation (Heart beating fast) from caffeinated drinks")
+print("24 students feel Insomnia (Poor Sleep) from caffeinated drinks")
+print("21 students feel Dizziness from caffeinated drinks")
+print("3 students feel Vomiting from caffeinated drinks")
+print("30 students feel craving for more from caffeinated drinks")
+print("18 students feel Meal skipping from caffeinated drinks")
+q=0
+for t in df["Concentrate on what to do next"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Concentrate on what to do next")
+q=0
+for t in df["Concentrate on what to do next"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Concentrate on what to do next")
+q=0
+for t in df["Concentrate on what to do next"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Concentrate on what to do next")
+q=0
+for t in df["Concentrate on what to do next"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Concentrate on what to do next")
+q=0
+for t in df["Talk to friends"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Talk to friends")
+q=0
+for t in df["Talk to friends"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Talk to friends")
+q=0
+for t in df["Talk to friends"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Talk to friends")
+q=0
+for t in df["Talk to friends"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Talk to friends")
+q=0
+for t in df["Talk to parents or relatives"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Talk to parents or relatives")
+q=0
+for t in df["Talk to parents or relatives"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Talk to parents or relatives")
+q=0
+for t in df["Talk to parents or relatives"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Talk to parents or relatives")
+q=0
+for t in df["Talk to parents or relatives"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Talk to parents or relatives")
+q=0
+for t in df["Sleeping"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Sleeping")
+q=0
+for t in df["Sleeping"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Sleeping")
+q=0
+for t in df["Sleeping"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Sleeping")
+q=0
+for t in df["Sleeping"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Sleeping")
+q=0
+for t in df["Crying"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Crying")
+q=0
+for t in df["Crying"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Crying")
+q=0
+for t in df["Crying"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Crying")
+q=0
+for t in df["Crying"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Crying")
+q=0
+for t in df["Spiritual – praying, meditation/yoga"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Spiritual – praying, meditation/yoga")
+q=0
+for t in df["Spiritual – praying, meditation/yoga"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Spiritual – praying, meditation/yoga")
+q=0
+for t in df["Spiritual – praying, meditation/yoga"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Spiritual – praying, meditation/yoga")
+q=0
+for t in df["Spiritual – praying, meditation/yoga"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Spiritual – praying, meditation/yoga")
+q=0
+for t in df["Watch television, movies"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Watch television, movies")
+q=0
+for t in df["Watch television, movies"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Watch television, movies")
+q=0
+for t in df["Watch television, movies"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Watch television, movies")
+q=0
+for t in df["Watch television, movies"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Watch television, movies")
+q=0
+for t in df["Play games/sports"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Play games/sports")
+q=0
+for t in df["Play games/sports"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Play games/sports")
+q=0
+for t in df["Play games/sports"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Play games/sports")
+q=0
+for t in df["Play games/sports"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Play games/sports")
+q=0
+for t in df["Smoking tobacco/ taking alcohol"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Smoking tobacco/ taking alcohol")
+q=0
+for t in df["Smoking tobacco/ taking alcohol"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Smoking tobacco/ taking alcohol")
+q=0
+for t in df["Smoking tobacco/ taking alcohol"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Smoking tobacco/ taking alcohol")
+q=0
+for t in df["Smoking tobacco/ taking alcohol"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Smoking tobacco/ taking alcohol")
+q=0
+for t in df["Keeping feeling to self"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Keeping feeling to self")
+q=0
+for t in df["Keeping feeling to self"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Keeping feeling to self")
+q=0
+for t in df["Keeping feeling to self"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Keeping feeling to self")
+q=0
+for t in df["Keeping feeling to self"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Keeping feeling to self")
+q=0
+for t in df["Tried to look on the bright side of life"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Tried to look on the bright side of life")
+q=0
+for t in df["Tried to look on the bright side of life"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Tried to look on the bright side of life")
+q=0
+for t in df["Tried to look on the bright side of life"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Tried to look on the bright side of life")
+q=0
+for t in df["Tried to look on the bright side of life"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Tried to look on the bright side of life")
+q=0
+for t in df["Spend more time alone"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Spend more time alone")
+q=0
+for t in df["Spend more time alone"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Spend more time alone")
+q=0
+for t in df["Spend more time alone"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Spend more time alone")
+q=0
+for t in df["Spend more time alone"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Spend more time alone")
+q=0
+for t in df["Refuse to think about it too much"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Refuse to think about it too much")
+q=0
+for t in df["Refuse to think about it too much"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Refuse to think about it too much")
+q=0
+for t in df["Refuse to think about it too much"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Refuse to think about it too much")
+q=0
+for t in df["Refuse to think about it too much"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Refuse to think about it too much")
+q=0
+for t in df["Double the efforts and work harder"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Double the efforts and work harder")
+q=0
+for t in df["Double the efforts and work harder"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Double the efforts and work harder")
+q=0
+for t in df["Double the efforts and work harder"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Double the efforts and work harder")
+q=0
+for t in df["Double the efforts and work harder"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Double the efforts and work harder")
+
+q=0
+for t in df["Convince self things aren’t as bad as it seem"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Convince self things aren’t as bad as it seem")
+q=0
+for t in df["Convince self things aren’t as bad as it seem"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Convince self things aren’t as bad as it seem")
+q=0
+for t in df["Convince self things aren’t as bad as it seem"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Convince self things aren’t as bad as it seem")
+q=0
+for t in df["Convince self things aren’t as bad as it seem"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Convince self things aren’t as bad as it seem")
+q=0
+for t in df["Avoid being with people"]:
+    if t == "A lot":
+        q+=1
+print(f"{q} students  chose 'a lot' on Avoid being with people")
+q=0
+for t in df["Avoid being with people"]:
+    if t == "A medium amount":
+        q+=1
+print(f"{q} students  chose 'A medium amount' on Avoid being with people")
+q=0
+for t in df["Avoid being with people"]:
+    if t == "Not at all":
+        q+=1
+print(f"{q} students  chose 'Not at all' on Avoid being with people")
+q=0
+for t in df["Avoid being with people"]:
+    if t == "A little bit":
+        q+=1
+print(f"{q} students  chose 'A little bit' on Avoid being with people")
+q=0
+for t in df["If you don’t take caffeinated drinks, what do you take?"]:
+    if "Water" in str(t):
+        q+=1
+print(f"{q} students students take water instead of caffeinated drinks")
+q=0
+for t in df["If you don’t take caffeinated drinks, what do you take?"]:
+    if "Energy" in str(t):
+        q+=1
+    elif "energy" in str(t):
+        q+=1
+    elif "juice" in str(t):
+        q+=1
+    elif "Juice" in str(t):
+        q+=1
+    elif "Cway" in str(t):
+        q+=1
+print(f"{q} students take energy drinks/juice instead of caffeinated drinks")
+q=0
+for t in df["If you don’t take caffeinated drinks, what do you take?"]:
+    if "Tea" in str(t):
+        q+=1
+    elif "tea" in str(t):
+        q+=1
+    elif 'Milk' in str(t):
+        q+=1
+    elif 'yoghurt' in str(t):
+        q+=1
+    elif 'fresh' in str(t):
+        q+=1
+    elif 'Fresh' in str(t):
+        q+=1
+print(f"{q} students take tea/milk/yoghurt instead of caffeinated drinks")
+q=0
+for t in df["If you don’t take caffeinated drinks, what do you take?"]:
+    if "Coke" in str(t):
+        q+=1
+    elif 'Carbonate' in str(t):
+        q+=1
+    elif 'carbonate' in str(t):
+        q+=1
+print(f"{q} students take carbonated drinks instead of caffeinated drinks")
+q=0
+for t in df["If you don’t take caffeinated drinks, what do you take?"]:
+    if "Food" in str(t):
+        q+=1
+    elif "food" in str(t):
+        q+=1
+    elif 'Snack' in str(t):
+        q+=1
+    elif 'snack' in str(t):
+        q+=1
+    elif 'Fruits' in str(t):
+        q+=1
+    elif 'fruits' in str(t):
+        q+=1
+    elif 'Suya' in str(t):
+        q+=1
+print(f"{q} students eat solid food instead of caffeinated drinks")
+q=0
+for t in df["If you don’t take caffeinated drinks, what do you take?"]:
+    if "gum" in str(t):
+        q += 1
+print(f"{q} students chew gum instead of caffeinated drinks")
+q=0
+for t in df["During the past month, what time have you usually gone to bed at night?"]:
+    if "9" in str(t):
+        q+=1
+    elif "8" in str(t):
+        q+=1
+print(f"{q} students go to bed before 10")
+q=0
+for t in df["During the past month, what time have you usually gone to bed at night?"]:
+    if "10" in str(t):
+        q+=1
+print(f"{q} students go to bed after 10")
+q=0
+for t in df["During the past month, what time have you usually gone to bed at night?"]:
+    if "11" in str(t):
+        q+=1
+print(f"{q} students go to bed after 11")
+q=0
+for t in df["During the past month, what time have you usually gone to bed at night?"]:
+    if "12" in str(t):
+        q+=1
+print(f"{q} students go to bed after 12")
+dg= pd.read_csv('output.csv')
+for i in dg.columns:
+    q = 0
+    for t in dg[i]:
+        if t == 'Not during the past month':
+            q+=1
+    if 'Unnamed' in str(i):
+        pass
+    else:
+        print(f"{q} students {i} Not during the past month")
+for i in dg.columns:
+    q = 0
+    for t in dg[i]:
+        if t == 'Less than once a week':
+            q+=1
+    if 'Unnamed' in str(i):
+        pass
+    else:
+        print(f"{q} students {i} Less than once a week")
+for i in dg.columns:
+    q = 0
+    for t in dg[i]:
+        if t == 'Three or more times a week':
+            q+=1
+    if 'Unnamed' in str(i):
+        pass
+    else:
+        print(f"{q} students {i} Three or more times a week")
+for i in dg.columns:
+    q = 0
+    for t in dg[i]:
+        if t == 'Once or twice a week':
+            q+=1
+    if 'Unnamed' in str(i):
+        pass
+    else:
+        print(f"{q} students {i} Once or twice a week")
+q=0
+for t in dg['How often during the past month have you had trouble sleeping because of other reasons?']:
+    if t == 'Three or more times a week':
+            q+=1
+    elif 'Unnamed' in str(t):
+        pass
+print(f"{q} students How often during the past month have you had trouble sleeping because of other reasons?Three or more times a week")
+q=0
+for t in dg['How often during the past month have you had trouble sleeping because of other reasons?']:
+    if t == 'Not during the past month':
+            q+=1
+    elif 'Unnamed' in str(t):
+        pass
+print(f"{q} students How often during the past month have you had trouble sleeping because of other reasons?Not during the past month")
+q=0
+for t in dg['How often during the past month have you had trouble sleeping because of other reasons?']:
+    if t == 'Less than once a week':
+            q+=1
+    elif 'Unnamed' in str(t):
+        pass
+print(f"{q} students How often during the past month have you had trouble sleeping because of other reasons?Less than once a week")
+q=0
+for t in dg['During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?']:
+    if t == 'Three or more times a week':
+            q+=1
+    elif 'Unnamed' in str(t):
+        pass
+print(f"{q} students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Three or more times a week")
+q=0
+for t in dg['During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?']:
+    if t == 'Not during the past month':
+            q+=1
+    elif 'Unnamed' in str(t):
+        pass
+print(f"{q} students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Not during the past month")
+q=0
+for t in dg['During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?']:
+    if t == 'Less than once a week':
+            q+=1
+    elif 'Unnamed' in str(t):
+        pass
+print(f"{q} students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Less than once a week")
+q=0
+for t in df["During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?"]:
+    if t == "No problem at all":
+        q+=1
+print(f"{q} students  chose 'No problem at all' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?")
+q=0
+for t in df["During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?"]:
+    if t == "Only a very slight problem":
+        q+=1
+print(f"{q} students  chose 'Only a very slight problem' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?")
+q=0
+for t in df["During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?"]:
+    if t == "Somewhat of a problem":
+        q+=1
+print(f"{q} students  chose 'Somewhat of a problem' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?")
+q=0
+for t in df["During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?"]:
+    if t == "A very big problem":
+        q+=1
+print(f"{q} students  chose 'A very big problem' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?")
+
+for index, row in df.iterrows():
+    # Check if the specific item is found in the desired column
+    if row['Gender'] == "Female":
+        # Drop the corresponding row
+        df.drop(index, inplace=True)
+df.to_csv("Male data.csv", index=False)
+
 # # Provided text containing numbers
 # text = """
 # 114 students believe it will increase heart rates
@@ -858,8 +856,6 @@ import openpyxl
 #
 # print(numbers)
 # pattern = r'([a-zA-Z\s\-\d\(\)/]+)'
-#
-# # Find all texts in the text
 # texts = re.findall(pattern, text)
 #
 # # Print the texts
