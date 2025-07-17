@@ -10,13 +10,9 @@ p=0
 for i in dp['Do you agree to participate in this study?']:
     if i=="No":
         p+=1
-        # dp = dp.drop(i, axis=1)
-# dp.to_excel('data.xlsx', index=False)
-# print(dp.columns)
+
 for index, row in dp.iterrows():
-    # Check if the specific item is found in the desired column
     if row['Do you agree to participate in this study?'] == "No":
-        # Drop the corresponding row
         dp.drop(index, inplace=True)
 
 print(f"{o} students chose to participate in this study")
@@ -843,198 +839,7 @@ df.to_csv("Male data.csv", index=False)
 # 25 students  chose 'Somewhat of a problem' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?
 # 10 students  chose 'A very big problem' on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done? code extract all the numbers here and put them in a list one by one
 # """
-#
-# # Extract all the numbers using regular expressions
-# numbers = re.findall(r'\d+', text)
-#
-# # Convert the extracted numbers from strings to integers
-# numbers = [int(num) for num in numbers]
-#
-# print(numbers)
-# pattern = r'([a-zA-Z\s\-\d\(\)/]+)'
-# texts = re.findall(pattern, text)
-#
-# # Print the texts
-# print(texts)
-#
-# dataa =[
-#     'students believe it will increase heart rates',
-#     'students believe it will lead to increase in Blood pressure',
-#     'students believe it will cause bone weakness?',
-#     'students believe it is a cause for cancer',
-#     'students believe it will lead to Diabetes',
-#     'students believe it will lead to an increases urination',
-#     'students believe mg/day is the acceptable amount of daily consumption of caffeine',
-#     'students believe mg/day is the acceptable amount of daily consumption of caffeine',
-#     'students believe mg/day is the acceptable amount of daily consumption of caffeine',
-#     'students believe mg/day is the acceptable amount of daily consumption of caffeine',
-#     'students consume caffeinated drinks during the examination period',
-#     'students consume Soda',
-#     'students consume caffeinated tea',
-#     'students consume Energy drinks',
-#     'students consume Coffee',
-#     'students use bottles',
-#     'students use sachets',
-#     'students have no preferences',
-#     'students use cans',
-#     'students take caffeinated drinks Thrice or more weekly',
-#     'students take caffeinated drinks weekly',
-#     'students take caffeinated drinks Daily',
-#     'Only student mixes caffeinated drinks with alcohol',
-#     'Only student mixes caffeinated drinks with drugs',
-#     'students feel nervousness from caffeinated drinks',
-#     'students have Irritable behavior from caffeinated drinks',
-#     'students feel mood swings from caffeinated drinks',
-#     'students Hallucinate from caffeinated drinks',
-#     'students feel aggression from caffeinated drinks',
-#     'students feel Palpitation (Heart beating fast) from caffeinated drinks',
-#     'students feel Insomnia (Poor Sleep) from caffeinated drinks',
-#     'students feel Dizziness from caffeinated drinks',
-#     'students feel Vomiting from caffeinated drinks',
-#     'students feel craving for more from caffeinated drinks',
-#     'students feel Meal skipping from caffeinated drinks',
-#     'students chose a lot on Concentrate on what to do next',
-#     'students chose A medium amount on Concentrate on what to do next',
-#     'students chose Not at all on Concentrate on what to do next',
-#     'students chose A little bit on Concentrate on what to do next',
-#     'students chose a lot on Talk to friends',
-#     'students chose A medium amount on Talk to friends',
-#     'students chose Not at all on Talk to friends',
-#     'students chose A little bit on Talk to friends',
-#     'students chose a lot on Talk to parents or relatives',
-#     'students chose A medium amount on Talk to parents or relatives',
-#     'students chose Not at all on Talk to parents or relatives',
-#     'students chose A little bit on Talk to parents or relatives',
-#     'students chose a lot on Sleeping',
-#     'students chose A medium amount on Sleeping',
-#     'students chose Not at all on Sleeping',
-#     'students chose A little bit on Sleeping',
-#     'students chose a lot on Crying',
-#     'students chose A medium amount on Crying',
-#     'students chose Not at all on Crying',
-#     'students chose A little bit on Crying',
-#     'students chose a lot on Spiritual – praying, meditation/yoga',
-#     'students chose A medium amount on Spiritual – praying, meditation/yoga',
-#     'students chose Not at all on Spiritual – praying, meditation/yoga',
-#     'students chose A little bit on Spiritual – praying, meditation/yoga',
-#     'students chose a lot on Watch television, movies',
-#     'students chose A medium amount on Watch television, movies',
-#     'students chose Not at all on Watch television, movies',
-#     'students chose A little bit on Watch television, movies',
-#     'students chose a lot on Play games/sports',
-#     'students chose A medium amount on Play games/sports',
-#     'students chose Not at all on Play games/sports',
-#     'students chose A little bit on Play games/sports',
-#     'student chose a lot on Smoking tobacco/ taking alcohol',
-#     'students chose A medium amount on Smoking tobacco/ taking alcohol',
-#     'students chose Not at all on Smoking tobacco/ taking alcohol',
-#     'students chose A little bit on Smoking tobacco/ taking alcohol',
-#     'students chose a lot on Keeping feeling to self',
-#     'students chose A medium amount on Keeping feeling to self',
-#     'students chose Not at all on Keeping feeling to self',
-#     'students chose A little bit on Keeping feeling to self',
-#     'students chose a lot on Tried to look on the bright side of life',
-#     'students chose A medium amount on Tried to look on the bright side of life',
-#     'students chose Not at all on Tried to look on the bright side of life',
-#     'students chose A little bit on Tried to look on the bright side of life',
-#     'students chose a lot on Spend more time alone',
-#     'students chose A medium amount on Spend more time alone',
-#     'students chose Not at all on Spend more time alone',
-#     'students chose A little bit on Spend more time alone',
-#     'students chose a lot on Refuse to think about it too much',
-#     'students chose A medium amount on Refuse to think about it too much',
-#     'students chose Not at all on Refuse to think about it too much',
-#     'students chose A little bit on Refuse to think about it too much',
-#     'students chose a lot on Double the efforts and work harder',
-#     'students chose A medium amount on Double the efforts and work harder',
-#     'students chose Not at all on Double the efforts and work harder',
-#     'students chose A little bit on Double the efforts and work harder',
-#     'students chose a lot on Convince self things aren’t as bad as it seem',
-#     'students chose A medium amount on Convince self things aren’t as bad as it seem',
-#     'students chose Not at all on Convince self things aren’t as bad as it seem',
-#     'students chose A little bit on Convince self things aren’t as bad as it seem',
-#     'student chose a lot on Avoid being with people',
-#     'students chose A medium amount on Avoid being with people',
-#     'students chose Not at all on Avoid being with people',
-#     'students chose A little bit on Avoid being with people',
-#     'students students take water instead of caffeinated drinks',
-#     'students take energy drinks/juice instead of caffeinated drinks',
-#     'students take tea/milk/yoghurt instead of caffeinated drinks',
-#     'students take carbonated drinks instead of caffeinated drinks',
-#     'students eat solid food instead of caffeinated drinks',
-#     'student chew gum instead of caffeinated drinks',
-#     'students go to bed before ',
-#     'students go to bed after ',
-#     'students go to bed after ',
-#     'students go to bed after ',
-#     'students Cannot get sleep within  minutes Not during the past month',
-#     'students Wake up in the middle of the night or early morning Not during the past month',
-#     'students Have to get up to use the bathroom Not during the past month',
-#     'students Cannot breathe comfortably Not during the past month',
-#     'students Cough or snore loudly Not during the past month',
-#     'students Feel too cold Not during the past month',
-#     'students Feel too hot Not during the past month',
-#     'students Had bad dreams Not during the past month',
-#     'students Have pain Not during the past month',
-#     'students How often during the past month have you had trouble sleeping because of other reasons? Not during the past month',
-#     'students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity? Not during the past month',
-#     'students Cannot get sleep within  minutes Less than once a week',
-#     'students Wake up in the middle of the night or early morning Less than once a week',
-#     'students Have to get up to use the bathroom Less than once a week',
-#     'students Cannot breathe comfortably Less than once a week',
-#     'students Cough or snore loudly Less than once a week',
-#     'students Feel too cold Less than once a week',
-#     'students Feel too hot Less than once a week',
-#     'students Had bad dreams Less than once a week',
-#     'students Have pain Less than once a week',
-#     'students How often during the past month have you had trouble sleeping because of other reasons? Less than once a week',
-#     'students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity? Less than once a week',
-#     'students Cannot get sleep within  minutes Three or more times a week',
-#     'students Wake up in the middle of the night or early morning Three or more times a week',
-#     'students Have to get up to use the bathroom Three or more times a week',
-#     'students Cannot breathe comfortably Three or more times a week',
-#     'students Cough or snore loudly Three or more times a week',
-#     'students Feel too cold Three or more times a week',
-#     'students Feel too hot Three or more times a week',
-#     'students Had bad dreams Three or more times a week',
-#     'students Have pain Three or more times a week',
-#     'students How often during the past month have you had trouble sleeping because of other reasons? Three or more times a week',
-#     'students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity? Three or more times a week',
-#     'students Cannot get sleep within  minutes Once or twice a week',
-#     'students Wake up in the middle of the night or early morning Once or twice a week',
-#     'students Have to get up to use the bathroom Once or twice a week',
-#     'students Cannot breathe comfortably Once or twice a week',
-#     'students Cough or snore loudly Once or twice a week',
-#     'students Feel too cold Once or twice a week',
-#     'students Feel too hot Once or twice a week',
-#     'students Had bad dreams Once or twice a week',
-#     'students Have pain Once or twice a week',
-#     'students How often during the past month have you had trouble sleeping because of other reasons? Once or twice a week',
-#     'students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity? Once or twice a week',
-#     'students How often during the past month have you had trouble sleeping because of other reasons?Three or more times a week',
-#     'students How often during the past month have you had trouble sleeping because of other reasons?Not during the past month',
-#     'students How often during the past month have you had trouble sleeping because of other reasons?Less than once a week',
-#     'students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Three or more times a week',
-#     'students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Not during the past month',
-#     'students During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?Less than once a week',
-#     'students  chose No problem at all on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?',
-#     'students  chose Only a very slight problem on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?',
-#     'students  chose Somewhat of a problem on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?',
-#     'students  chose A very big problem on During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?'
-# ]
-# # dff = pd.DataFrame(dataa)
-# #
-# # # Write the DataFrame to an Excel file
-# # dff.to_excel("survey_data.xlsx", index=False)
-#
-# print(len(numbers))
-# print(len(dataa))
-# import pandas as pd
-#
-# # Define the data
-# import pandas as pd
-#
-# # Define the data
+
 # data = {
 #     "Category": [
 #         "Increase heart rates",
@@ -1316,56 +1121,48 @@ df = df.dropna()
 
 # Print the DataFrame with the added 'Score' column
 df.to_excel("scored_data.xlsx", index=False)
-print(df)
 
 
-# Create DataFrame from the updated dictionary
-# df = pd.DataFrame(df)
+print(scored_data)
+import matplotlib.pyplot as plt
+gender_freq = df['Gender'].value_counts()
 
-# Print the DataFrame
-# print(df)
-#
-# print(scored_data)
-# print(df)
-# import matplotlib.pyplot as plt
-# gender_freq = df['Gender'].value_counts()
-#
-# # Frequency distribution for Age Range (you can define your own age ranges)
-# age_bins = [0, 20, 30, 40, 50]  # Define your own age bins
-# age_labels = ['0-16', '16-18', '19-21', '22-25']  # Labels for age ranges
-# df['Age Range'] = pd.cut(df['Age'], bins=age_bins, labels=age_labels, right=False)
-# age_freq = df['Age Range'].value_counts()
-#
-# # Frequency distribution for Faculty
-# faculty_freq = df['Faculty'].value_counts()
-#
-# # Frequency distribution for Level
-# level_freq = df['Level'].value_counts()
-#
-# # Plotting frequency distributions
-# plt.figure(figsize=(10, 8))
-#
-# # Gender distribution
-# plt.subplot(2, 2, 1)
-# gender_freq.plot(kind='bar', rot=0)
-# plt.title('Gender Distribution')
-#
-# # Age range distribution
-# plt.subplot(2, 2, 2)
-# age_freq.plot(kind='bar', rot=0)
-# plt.title('Age Range Distribution')
-#
-# # Faculty distribution
-# plt.subplot(2, 2, 3)
-# faculty_freq.plot(kind='bar', rot=90)
-# plt.title('Faculty Distribution')
-#
-# # Level distribution
-# plt.subplot(2, 2, 4)
-# level_freq.plot(kind='bar', rot=0)
-# plt.title('Level Distribution')
-#
-# plt.tight_layout()
-# plt.show()
-# print(do)
+# Frequency distribution for Age Range (you can define your own age ranges)
+age_bins = [0, 20, 30, 40, 50]  # Define your own age bins
+age_labels = ['0-16', '16-18', '19-21', '22-25']  # Labels for age ranges
+df['Age Range'] = pd.cut(df['Age'], bins=age_bins, labels=age_labels, right=False)
+age_freq = df['Age Range'].value_counts()
+
+# Frequency distribution for Faculty
+faculty_freq = df['Faculty'].value_counts()
+
+# Frequency distribution for Level
+level_freq = df['Level'].value_counts()
+
+# Plotting frequency distributions
+plt.figure(figsize=(10, 8))
+
+# Gender distribution
+plt.subplot(2, 2, 1)
+gender_freq.plot(kind='bar', rot=0)
+plt.title('Gender Distribution')
+
+# Age range distribution
+plt.subplot(2, 2, 2)
+age_freq.plot(kind='bar', rot=0)
+plt.title('Age Range Distribution')
+
+# Faculty distribution
+plt.subplot(2, 2, 3)
+faculty_freq.plot(kind='bar', rot=90)
+plt.title('Faculty Distribution')
+
+# Level distribution
+plt.subplot(2, 2, 4)
+level_freq.plot(kind='bar', rot=0)
+plt.title('Level Distribution')
+
+plt.tight_layout()
+plt.show()
+print(do)
 
